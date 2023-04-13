@@ -21,7 +21,7 @@ export const testColumns = [
     { key: "machine", label: "Machine", class: "text-center" },
     { key: "description", label: "Description", class: "text-center" },
     { key: "status", label: "Status", class: "text-center" },
-    { label: "Action", class: "text-center" }, 
+   
 ]
   
 

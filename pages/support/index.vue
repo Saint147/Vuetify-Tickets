@@ -11,7 +11,9 @@
               <schedule-meeting></schedule-meeting>
             </v-card-actions>
             <tech-buttons>
-              <template v-slot:actions> </template>
+              <template v-slot:actions
+                ><Nuxtlink to="/"><v-btn>Home</v-btn></Nuxtlink>
+              </template>
             </tech-buttons>
           </v-card>
         </v-col>

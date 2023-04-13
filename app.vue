@@ -1,36 +1,19 @@
 <template>
-  <div>
+  <div class="h-screen">
+    <div v-if="loading" class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500" />
     <NuxtLayout>
-      <NuxtLoadingIndicator />
       <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
 
-<script>
-export default {
-  data: () => ({
-    overlay: false,
-  }),
-
-  watch: {
-    overlay(val) {
-      val &&
-        setTimeout(() => {
-          this.overlay = false;
-        }, 3000);
-    },
-  },
-};
+<script setup lang="ts">
+const nuxtApp = useNuxtApp();
+const loading = ref(false);
+nuxtApp.hook("page:start", () => {
+  loading.value = true;
+});
+nuxtApp.hook("page:finish", () => {
+  loading.value = false;
+});
 </script>
-<style>
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s;
-}
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
-}
-</style>

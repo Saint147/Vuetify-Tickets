@@ -1,4 +1,4 @@
-
+import { TableColumn } from "./column";
 export type MyType = {
     id: number;
     name: string;
@@ -11,13 +11,11 @@ export type MyType = {
 type MyGroupType = {
     [key:string]: MyType;
 }
-export const productColumns = [
+export const productColumns: TableColumn[] = [
     { key: "name", label: "Product Name",class: "text-center" },
     { key: "title", label: "Title", class: "text-center" },
     { key: "content", label: "Description", class: "text-center" },
     { key: "price", label: "Price", class: "text-center" },
-    { key: "view",label: "Action", class: "text-center" }, 
-    { key: "delete",class: "text-right" },
 ]
 
 export const products: MyType[] = [

@@ -24,88 +24,17 @@
         </NuxtLink>
       </slot>
     </div>
-    <div class="mt-5">
-      <TableComp :tableColumns="ticketColumns" :tableData="tickets"></TableComp>
-    </div>
-    <div class="mt-5">
-      <div v-if="userSession">
-        <p class="pt-3">Hi {{ userSession.displayName }}!</p>
-        <link-button @click="$store.dispatch('signout')" sm primary>
-          Sign Out
-        </link-button>
-      </div>
-      <div v-else>
-        <p class="pt-3">You are not authenticated.</p>
-        <v-btn href="/login" sm primary>Sign In</v-btn>
-        <v-btn href="/register" sm outline-secondary class="ml-2">
-          Register New User
-        </v-btn>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import HomeCaresol from "../components/HomeCaresol.vue";
 import buttonCard from "../components/buttonCard.vue";
-import NavBar from "../components/NavBar.vue";
-import TableComp from "../components/TableComp.vue";
-import { tickets } from "@/utils/tickets";
 
 export default {
   components: {
     HomeCaresol,
     buttonCard,
-    NavBar,
-    TableComp,
-  },
-  data() {
-    return {
-      customerColumns: [
-        { key: "name", label: "Name of person", class: "text-center" },
-        { key: "email", label: "Email", class: "text-center" },
-        { key: "address", label: "Address", class: "text-center" },
-        { key: "tel", label: "Telephone", class: "text-center" },
-      ],
-      clientData: [
-        {
-          id: 1,
-          name: "John",
-          email: "john@example.com",
-          tel: "0123456789",
-          address: "jnkkajfkabvs",
-        },
-        {
-          id: 2,
-          name: "Jane",
-          email: "jane@example.com",
-          tel: "0123456789",
-          address: "oiansoinaca",
-        },
-        {
-          id: 3,
-          name: "Steve",
-          email: "steve@example.com",
-          tel: "0123456789",
-          address: "onaonvanlnasc",
-        },
-        {
-          id: 4,
-          name: "Mary",
-          email: "mary@example.com",
-          tel: "0123456789",
-          address: "ascjacbkbkb",
-        },
-        {
-          id: 5,
-          name: "Someleze",
-          email: "saint@example.com",
-          tel: "0123456789",
-          address: "onvonainoahee",
-        },
-      ],
-      tickets,
-    };
   },
 };
 </script>
